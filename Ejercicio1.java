@@ -19,7 +19,7 @@ public class Ejercicio1 {
                 error = false;
             } catch (InputMismatchException e) {
                 leer.nextLine();
-                System.out.println("Error, no has introducido un número en el dividiendo");
+                System.out.println("Error, no has introducido un número entero en el dividiendo"  + (e));
             }
         }
 
@@ -36,10 +36,10 @@ public class Ejercicio1 {
                 System.out.println("El resultado del cociente: " + cociente + " y el resultado del resto es: " + resto);
 
             } catch (ArithmeticException e) {
-                System.out.println("Error, no se puede dividir entre 0 ");
+                System.out.println("Error, no se puede dividir entre 0 " + (e));
                 leer.nextLine();
             } catch (InputMismatchException e) {
-                System.out.println("Error, no has introducido un número en el divisor");
+                System.out.println("Error, no has introducido un número entero en el divisor" + (e));
                 leer.nextLine();
             }
         }
