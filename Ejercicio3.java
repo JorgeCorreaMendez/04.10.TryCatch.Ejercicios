@@ -11,6 +11,8 @@ public class Ejercicio3 {
         int posicicionArray = 0;
         String cadenaFinal = "";
 
+        final int salida = -1;
+
         for (int i = 0; alfabeto.length > i; i++) {
             alfabeto[i] = caracter;
             caracter++;
@@ -18,7 +20,6 @@ public class Ejercicio3 {
 
         do {
             System.out.print("Introduzca una posición de la array: ");
-
             try {
                 posicicionArray = leer.nextInt();
                 System.out.println("-----------------------------------");
@@ -27,10 +28,11 @@ public class Ejercicio3 {
                 System.out.println("Error, no has introducido un número entero " + (e));
                 leer.nextLine();
             } catch (ArrayIndexOutOfBoundsException e) {
+                if(posicicionArray == salida){break;}
                 System.out.println("Error, no has introducido un número dentro del intervalo " + (e));
                 leer.nextLine();
             }
-        } while (posicicionArray != -1);
+        } while (posicicionArray != salida);
 
         leer.close();
 
